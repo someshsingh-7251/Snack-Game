@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Acme|Josefin+Sans');
+            @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+            body{
+                margin:0px;
+                padding:0px;
+                background:#78dfff;
+                max-width:700px;
+            }
+            header{
+                height:30px;
+                background:#e93330;
+            }
+            #hl{
+                width:40%;
+                float:left;
+                padding-left:5%;
+                padding-top:5px;
+                color:#fff;
+                font-weight:900;
+                font-family: 'Acme', sans-serif;
+            }
+            #hr{
+                width:40%;
+                float:right;
+                text-align:right;
+                padding-right:5%;
+                padding-top:5px;
+                color:#fff;
+                font-weight:900;
+                font-family: 'Acme', sans-serif;
+            }
+            #DIV{
+                width:300px;
+                margin:0 auto;
+            }
+            p{
+                height:10px;
+                width:10px;
+                background:#000;
+                position:relative;
+                display:inline-block;
+                margin:0px;
+                padding:0px;
+                line-height:10px;
+            }
+            button{
+                transform:translateY(-270px);
+                -moz-transform:translateY(-270px);
+                -webkit-transform:translateY(-270px);
+                -ms-transform:translateY(-270px);
+                width:30%;
+                height:40px;
+                margin:0;
+                padding:0;
+                border:2px solid blue;
+                border-radius:30px;
+            }
+            .ud{
+                margin:5px 30%;
+            }
+            #l{
+                margin:5px 2% 5px 13%;
+                font-size:18px;
+            }
+            #r{
+                margin:5px 13% 5px 2%;
+                font-size:18px;
+            }
+            #d span{
+                display:block;
+                -moz-transform:rotateX(180deg);
+                -webkit-transform:rotateX(180deg);
+                -ms-transform:rotateX(180deg);
+                transform:rotateX(180deg);
+                font-size:20px;
+                margin-top:-5px;
+            }
+            #u span{
+                margin-top:5px;
+                display:block;
+                font-size:20px;
+            }
+            #load{
+                background:#000;
+                position:absolute;
+                top:0;
+                left:0;
+                height:100%;
+                width:100%; 
+                z-index:500;
+                color:#fff;
+            }
+            #cp{
+                width:300px; 
+                margin:25px auto;
+            }
+            #bd{
+                width:100%; 
+                background-color:#eee;
+                border-radius:3px;
+                padding:1px;
+                box-shadow:inset 0px 3px 1px #ddd;
+            }
+            #bf{
+                display:block;
+                width:0%; 
+                height:10px;
+                background-color:#0f9816;
+                border-radius:3px;
+                transition:width 0.05s ease;
+            }
+            h4,h3{
+                font-family: 'Architects Daughter', cursive;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body onload="mover()">
+        <div id="load">
+        <h1 style="text-align:center;">Snake</h1>
+        <h3>loading....</h3>
+        <div id="cp">
+        <div id="bd"><span id="bf"></span></div>
+        </div>
+        <script>
+            var e = document.querySelector("#bf");
+            var w = 0;
+            var interval=setInterval(function(){
+            e.style.width=w+"%";
+            w=w+1;
+            if(w==100){document.getElementById("load").style.display="none";}
+        },50);
+        </script>
+            <h4>Created by: Somesh Singh</h4>
+        </div>
+        <header>
+            <div id="hl">Your Score :</div>
+            <div id="hr">0</div>
+        </header>
+        <div id="DIV">
+        </div>
+        <button id="u" class="ud" onclick="moveu()"><span>^^^</span></button><br>
+        <button id="l" onclick="movel()"><<<</button>
+        <button id="r" onclick="mover()">>>></button><br>
+        <button id="d" class="ud" onclick="moved()"><span>^^^</span></button>
+        <script>
+        for(n=0;n<900;n++){
+            var para = document.createElement("p");
+            var DIV = document.getElementById("DIV");
+            var PARA = document.getElementById("para1");
+            DIV.insertBefore(para, PARA);}
+        for(m=0;m<900;m++){
+            var dd = Math.floor(m/30);
+            document.getElementsByTagName("p")[m].style.transform="translateY(-"+dd*10+"px)";
+            document.getElementsByTagName("p")[m].style.mozTransform="translateY(-"+dd*10+"px)";
+            document.getElementsByTagName("p")[m].style.webkitTransform="translateY(-"+dd*10+"px)";
+            document.getElementsByTagName("p")[m].style.msTransform="translateY(-"+dd*10+"px)";}
+        var bd=[464,465];
+        var intv1;
+        var intv2;
+        var intv3;
+        var intv4;
+        var pnt=Math.floor(Math.random()*900);
+        var score=0;
+        function moved(){
+            clearInterval(intv2);
+            clearInterval(intv3);
+            clearInterval(intv4);
+            document.getElementById("u").disabled=true;
+            document.getElementById("d").disabled=true;
+            document.getElementById("r").disabled=false;
+            document.getElementById("l").disabled=false;
+            intv1=setInterval(function(){
+                var ttt=bd[bd.length-1]+30;
+                if(ttt>899){
+                    ttt=ttt-900;}
+                if(bd.indexOf(ttt)>0){
+                document.write("<h1 style='text-align:center; color:#fff; background:#1b4d4e; width:60%; margin:40px 20%; border-radius:30%; padding:16px 0px;'>"+"Game Over"+"</h1>"+"<h3 style='font-size:25px; color:#a1dcfd; text-align:center; background:#ff0b47; width:70%; margin:50px 15%; border-top-left-radius:30px; border-bottom-right-radius:30px; padding:20px 0px;'>"+"Your Score: "+score+"</h3>");
+                clearInterval(intv1);}
+                else{
+                bd.push(ttt);
+                if(ttt==pnt){
+                    score+=10;
+                    document.getElementById("hr").innerHTML=score;
+                    pnt=Math.floor(Math.random()*900);}
+                else{document.getElementsByTagName("p")[bd.shift()].style.background="#000";}
+                for(l=0;l<bd.length;l++){
+                    document.getElementsByTagName("p")[bd[l]].style.background="blue";}
+                document.getElementsByTagName("p")[pnt].style.background="red";
+                }},200)}
+        function mover(){
+            clearInterval(intv1);
+            clearInterval(intv3);
+            clearInterval(intv4);
+            document.getElementById("r").disabled=true;
+            document.getElementById("l").disabled=true;
+            document.getElementById("u").disabled=false;
+            document.getElementById("d").disabled=false;
+            intv2=setInterval(function(){
+                var ttt=bd[bd.length-1]+1;
+                if(ttt%30==0){
+                    ttt=ttt-30;}
+                if(bd.indexOf(ttt)>0){
+                document.write("<h1 style='text-align:center; color:#fff; background:#1b4d4e; width:60%; margin:40px 20%; border-radius:30%; padding:16px 0px;'>"+"Game Over"+"</h1>"+"<h3 style='font-size:25px; color:#a1dcfd; text-align:center; background:#ff0b47; width:70%; margin:50px 15%; border-top-left-radius:30px; border-bottom-right-radius:30px; padding:20px 0px;'>"+"Your Score: "+score+"</h3>");
+                clearInterval(intv2);}
+                else{
+                bd.push(ttt);
+                if(ttt==pnt){
+                    score+=10;
+                    document.getElementById("hr").innerHTML=score;
+                    pnt=Math.floor(Math.random()*900);}
+                else{document.getElementsByTagName("p")[bd.shift()].style.background="#000";}
+                for(l=0;l<bd.length;l++){
+                    document.getElementsByTagName("p")[bd[l]].style.background="blue";}
+                document.getElementsByTagName("p")[pnt].style.background="red";}},200)}
+        function movel(){
+            clearInterval(intv1);
+            clearInterval(intv2);
+            clearInterval(intv4);
+            document.getElementById("r").disabled=true;
+            document.getElementById("l").disabled=true;
+            document.getElementById("u").disabled=false;
+            document.getElementById("d").disabled=false;
+            intv3=setInterval(function(){
+                var ttt=bd[bd.length-1]-1;
+                if(ttt%30==29 && ttt>0){
+                    ttt=ttt+30;}
+               if(ttt<0){ttt=ttt+30
+               } if(bd.indexOf(ttt)>0){
+                document.write("<h1 style='text-align:center; color:#fff; background:#1b4d4e; width:60%; margin:40px 20%; border-radius:30%; padding:16px 0px;'>"+"Game Over"+"</h1>"+"<h3 style='font-size:25px; color:#a1dcfd; text-align:center; background:#ff0b47; width:70%; margin:50px 15%; border-top-left-radius:30px; border-bottom-right-radius:30px; padding:20px 0px;'>"+"Your Score: "+score+"</h3>");
+                clearInterval(intv3);}
+                else{
+                bd.push(ttt);
+                if(ttt==pnt){
+                    score+=10;
+                    document.getElementById("hr").innerHTML=score;
+                    pnt=Math.floor(Math.random()*900);}
+                else{document.getElementsByTagName("p")[bd.shift()].style.background="#000";}
+                for(l=0;l<bd.length;l++){
+                    document.getElementsByTagName("p")[bd[l]].style.background="blue";
+                }
+                document.getElementsByTagName("p")[pnt].style.background="red";
+                }},200)}
+        function moveu(){
+            clearInterval(intv1);
+            clearInterval(intv2);
+            clearInterval(intv3);
+            document.getElementById("u").disabled=true;
+            document.getElementById("d").disabled=true;
+            document.getElementById("r").disabled=false;
+            document.getElementById("l").disabled=false;
+            intv4=setInterval(function(){
+                var ttt=bd[bd.length-1]-30;
+                if(ttt<0){
+                    ttt=ttt+900;}
+                if(bd.indexOf(ttt)>0){
+                document.write("<h1 style='text-align:center; color:#fff; background:#1b4d4e; width:60%; margin:40px 20%; border-radius:30%; padding:16px 0px;'>"+"Game Over"+"</h1>"+"<h3 style='font-size:25px; color:#a1dcfd; text-align:center; background:#ff0b47; width:70%; margin:50px 15%; border-top-left-radius:30px; border-bottom-right-radius:30px; padding:20px 0px;'>"+"Your Score: "+score+"</h3>");
+                clearInterval(intv4);}
+                else{
+                bd.push(ttt);
+                if(ttt==pnt){
+                    score+=10;
+                    document.getElementById("hr").innerHTML=score;
+                    pnt=Math.floor(Math.random()*900);}
+                else{document.getElementsByTagName("p")[bd.shift()].style.background="#000";}
+                for(l=0;l<bd.length;l++){
+                    document.getElementsByTagName("p")[bd[l]].style.background="blue";}
+                document.getElementsByTagName("p")[pnt].style.background="red";}
+        },200)
+        }
+        </script>
+    </body>
+</html>
