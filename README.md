@@ -1,22 +1,18 @@
-                   Snake Game
+## Snake Game
                    
 Welcome to the Snake Game, a classic and fun browser-based game built using HTML, CSS, and JavaScript. The objective of the game is to navigate a growing snake to eat food items while avoiding collisions with the walls or its own body.
 
-INTRODUCTION
-
+## Introduction
 The Snake Game is a simple yet addictive game where the player controls a snake to eat food appearing randomly on the screen. With each food item consumed, the snake grows longer, making the game progressively more challenging.
 
-FEATURES
+## Features
+- **Classic Gameplay:** Enjoy the timeless fun of the snake game.
+- **Responsive Design:** Playable on any device with a modern web browser.
+- **Keyboard Controls:** Easy to control using arrow keys.
+- **Score Tracking:** Keeps track of the player's score during the game session.
 
-1. Classic Gameplay: Enjoy the timeless fun of the snake game.
-2. Responsive Design: Playable on any device with a modern web browser.
-3. Keyboard Controls: Easy to control using arrow keys.
-4. Score Tracking: Keeps track of the player's score during the game session.
-
-INSTALLATION
-
+## Installation
 To run the Snake Game locally on your computer, follow these steps:
-
 1. Clone the Repository:
 
        git clone https://github.com/your-username/snake-game.git
@@ -28,7 +24,7 @@ To run the Snake Game locally on your computer, follow these steps:
        open index.html
 No additional installation steps are required as the game is built using only HTML, CSS, and JavaScript.
 
-HOW TO PLAY 
+## How to Play 
 1. Launch the game by opening the index.html file in your web browser.
 2. Press the arrow keys to start the game and control the snake's direction.
 3. Up Arrow: Move up
@@ -39,24 +35,22 @@ HOW TO PLAY
 8. Avoid hitting the walls or the snake's own body, or the game will end.
 9. Your score is displayed at the top of the game screen.
 
-TECHNOLOGIES USED
-1. HTML: For structuring the game elements.
-2. CSS: For styling the game interface.
-3. JavaScript: For game logic, controls, and interactions.
+## Technology Used
+- **HTML:** For structuring the game elements.
+- **CSS:** For styling the game interface.
+- **JavaScript:** For game logic, controls, and interactions.
 
-CONTRIBUTING
-
+## Contributting
 Contributions are welcome! If you would like to contribute to the development of this game, please follow these steps:
 
-FORK THE REPOSITORY
+## Fork the Respository
 1. Create a new branch (git checkout -b feature-branch).
 2. Make your changes and commit them (git commit -m 'Add some feature').
 3. Push the changes to your branch (git push origin feature-branch).
 4. Open a pull request.
 
-LICENSE
-
+## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-
-NOTE: Feel free to contact on Instagram: https://www.instagram.com/officialsomeshchinkusingh?igsh=MW1vdTZwbDdmMTZxbw==
+## NOTE:
+Feel free to contact on Instagram: https://www.instagram.com/officialsomeshchinkusingh?igsh=MW1vdTZwbDdmMTZxbw==
