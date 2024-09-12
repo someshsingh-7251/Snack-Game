@@ -1,4 +1,4 @@
-## Snake Game
+# Snake Game
                    
 Welcome to the Snake Game, a classic and fun browser-based game built using HTML, CSS, and JavaScript. The objective of the game is to navigate a growing snake to eat food items while avoiding collisions with the walls or its own body.
 
@@ -52,5 +52,6 @@ Contributions are welcome! If you would like to contribute to the development of
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## NOTE:
-Feel free to contact on Instagram: https://www.instagram.com/officialsomeshchinkusingh?igsh=MW1vdTZwbDdmMTZxbw==
+---
+
+*Note: Feel Free to Contact at Instagram: https://www.instagram.com/officialsomeshchinkusingh?igsh=MW1vdTZwbDdmMTZxbw==*
